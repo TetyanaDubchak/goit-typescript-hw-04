@@ -39,7 +39,7 @@ function MenuProvider({ children }: PropsProvider) {
 
   const menuContextAction = useMemo(
     () => ({
-      onSelectedMenu: (menu) => setSelectedMenu(menu),
+      onSelectedMenu: (menu: SelectedMenu) => setSelectedMenu(menu),
     }),
     []
   );
@@ -47,6 +47,7 @@ function MenuProvider({ children }: PropsProvider) {
   const menuContextSelected = useMemo(
     () => ({
       selectedMenu,
+      setSelectedMenu
     }),
     [selectedMenu]
   );
